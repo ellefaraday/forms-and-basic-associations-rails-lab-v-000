@@ -23,12 +23,12 @@ class Song < ActiveRecord::Base
     if content != ""
       note = Note.create(content: content, song: self)
     else
-    end      
+    end
   end
 
   def note_contents
     if self.notes
-      self.notes.collect do |note|
+      self.notes.map do |note|
         note.content
       end
     else
