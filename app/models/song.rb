@@ -20,6 +20,10 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(content)
+    if content != ""
+      note = Note.create(content: content, song: self)
+    else
+    end      
   end
 
   def note_contents
