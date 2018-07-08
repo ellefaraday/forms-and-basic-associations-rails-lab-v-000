@@ -12,6 +12,7 @@ class SongsController < ApplicationController
   end
 
   def create
+    puts params.inspect
     @song = Song.new(song_params)
 
     if @song.save
