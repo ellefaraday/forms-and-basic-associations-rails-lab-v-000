@@ -21,10 +21,11 @@ class Song < ActiveRecord::Base
 
   def note_contents=(contents)
     contents.each do |c|
+       self.posts << post
       if c != ""
-        note = Note.new(content: c)
-        note.song = self
+        note = Note.create(content: c)
         note.save
+        self.notes << note
       end
     end
   end
