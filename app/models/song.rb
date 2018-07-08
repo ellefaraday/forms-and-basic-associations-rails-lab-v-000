@@ -29,6 +29,6 @@ class Song < ActiveRecord::Base
       end
     else
       nil
-    end      
+    end
   end
 end
